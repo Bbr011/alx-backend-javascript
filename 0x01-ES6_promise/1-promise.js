@@ -1,11 +1,12 @@
-export default function taskBlock(trueOrFalse) {
-  const task = false;
-  const task2 = true;
-
-  if (trueOrFalse) {
-    const task = true; // eslint-disable-line no-unused-vars
-    const task2 = false; // eslint-disable-line no-unused-vars
-  }
-
-  return [task, task2];
+export default function getFullResponseFromAPI(success) {
+  return new Promise((resolve, reject) => {
+    if (success) {
+      resolve({
+        status: 200,
+        body: 'Success',
+      });
+    } else {
+      reject(new Error('The fake API is not working currently'));
+    }
+  });
 }
